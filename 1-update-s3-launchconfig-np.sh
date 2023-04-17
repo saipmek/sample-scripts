@@ -5,7 +5,7 @@ aws s3 cp s3://apiplatform/ocelot/launch-config-scripts/ocelot-launch-config-np.
 
 
 
-OLD_VERSION=$(cat ~/Desktop/Projects/ocelot-launch-configs/ocelot-launch-config-np.sh | grep "201275309847.dkr.ecr.us-east-1.amazonaws.com/ocelot" | rev | cut -d ":" -f1 | rev)
+OLD_VERSION=$(cat ~/Desktop/Projects/ocelot-launch-configs/ocelot-launch-config-np.sh | grep "$ $ID.dkr.ecr.us-east-1.amazonaws.com/ocelot" | rev | cut -d ":" -f1 | rev)
 
 echo "OLD_VERSION: $OLD_VERSION"
 
@@ -17,7 +17,7 @@ echo "NEW_VERSION: $NEW_VERSION"
 
 gsed -i'.BAK' "s/$OLD_VERSION/$NEW_VERSION/gI" ~/Desktop/Projects/ocelot-launch-configs/ocelot-launch-config-np.sh
 
-UPDATED_VERSION_VERFICATION=$(cat ~/Desktop/Projects/ocelot-launch-configs/ocelot-launch-config-np.sh | grep "201275309847.dkr.ecr.us-east-1.amazonaws.com/ocelot" | rev | cut -d ":" -f1 | rev)
+UPDATED_VERSION_VERFICATION=$(cat ~/Desktop/Projects/ocelot-launch-configs/ocelot-launch-config-np.sh | grep "$ID.dkr.ecr.us-east-1.amazonaws.com/ocelot" | rev | cut -d ":" -f1 | rev)
 
 echo "Verify whether the new version is updated?: $UPDATED_VERSION_VERFICATION"
 
